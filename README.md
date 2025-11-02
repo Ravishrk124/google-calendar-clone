@@ -56,3 +56,17 @@ This project is a high-fidelity fullstack clone of Google Calendar. It includes 
 Place images in `public/img/` and reference them like:
 ```jsx
 <img src="/img/addicon.PNG" alt="add" />
+
+
+Open browser at http://localhost:5173
+
+If missing scripts, add to package.json:
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+}
+Backend
+cd server
+npm install
+npm run dev
