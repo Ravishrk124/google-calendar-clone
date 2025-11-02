@@ -19,6 +19,24 @@ This project replicates Google Calendar’s interface and interactions with real
 - Smooth modal transitions
 - Light/Dark mode
 - Settings, tasks, and calendar toggles
+## 🏗️ Architecture Overview
+
+The Google Calendar Clone is designed using a modular client-server architecture.
+
+**Frontend (React + Vite):**
+- Manages user interface, event modals, sidebar, and calendar views.
+- Uses `react-big-calendar` for visual calendar rendering and `moment.js` for date management.
+- Axios handles API requests to the backend.
+
+**Backend (Node.js + Express):**
+- Exposes REST API endpoints (`/api/events`) for event CRUD operations.
+- Stores all events persistently in an SQLite database.
+- Automatically initializes `db.sqlite` if not found.
+
+**Data Flow:**
+1. User creates or edits an event → triggers Axios request to `/api/events`.
+2. Backend updates the database.
+3. Updated data is fetched and displayed instantly in the React UI.
 ## ⚙️ Installation
 
 
@@ -84,6 +102,13 @@ Then open http://localhost:5173
 | Styling | CSS3 | Google-style responsive layout |
 
 
+## 🧠 Business Logic & Edge Cases
+
+- **Event Overlaps:** Automatically handled by `react-big-calendar` layout, which arranges overlapping events side-by-side.
+- **Recurring Events:** Currently supports single-instance events. Future versions will add repeat patterns (daily, weekly, monthly).
+- **Validation:** Users must provide a title, start, and end time before saving.
+- **Timezone Handling:** Times are stored as ISO strings and converted using Moment.js.
+- **View Sync:** The selected view (month/week/day) and current date are stored in React state to maintain UI consistency when navigating.
 ## 🌟 Features
 
 - Create, edit, delete events  
@@ -95,6 +120,13 @@ Then open http://localhost:5173
 - Settings dropdown and appearance controls  
 
 
+## 🎞️ Animations & Interactions
+
+- Smooth **modal transitions** using CSS `opacity` and `transform` effects for open/close.
+- Subtle **hover highlights** on buttons and sidebar elements.
+- **Dropdown menus** scale in and fade smoothly for realism.
+- **Dark/Light theme** toggle applied via root class (`.app-root.dark`).
+- Responsive layout using **Flexbox and Grid**, ensuring pixel-perfect alignment across screen sizes.
 ## 👨‍💻 Author
 
 **Ravish Kumar**  
