@@ -1,0 +1,83 @@
+/* Polished toolbar and event styling */
+.app-root { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+.toolbar-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+.toolbar-left { display:flex; gap:12px; align-items:center; }
+.toolbar-title { font-weight:700; font-size:18px; margin-right:8px; }
+.toolbar-controls button {
+  margin-left:6px;
+  padding:6px 10px;
+  border-radius:6px;
+  border:1px solid #d1d5db;
+  background:#fff;
+  cursor:pointer;
+}
+.toolbar-controls .active, .toolbar-controls button.active {
+  background:#2563eb; color:white; border-color:#2563eb;
+}
+.btn { padding:6px 10px; border-radius:6px; border:1px solid #d1d5db; background:#fff; cursor:pointer; }
+.rbc-event { border-radius:6px !important; padding:4px 6px !important; color:white !important; font-weight:600 !important; }
+.calendar-wrap{ padding:12px; background: #fff; }
+
+/* Ensure month date numbers are visible and month cells have reasonable height */
+.rbc-month-view .rbc-date {
+  color: #111 !important;
+  font-weight: 600 !important;
+}
+.rbc-month-view .rbc-row-bg, .rbc-month-view .rbc-row-content {
+  min-height: 120px !important;
+}
+.rbc-month-view .rbc-date-cell {
+  padding: 6px !important;
+}
+.rbc-month-view .rbc-day-slot .rbc-day-bg {
+  min-height: 80px !important;
+}
+
+/* Make sure toolbar buttons look clickable */
+.toolbar-controls button { cursor: pointer; }
+.toolbar-controls .active { background: #2563eb; color: #fff; border-color:#2563eb; }
+
+
+/* STRONG FIX: ensure month grid cells & date numbers are visible */
+.rbc-month-view .rbc-month-row, .rbc-month-view .rbc-row {
+  display: table-row !important;
+}
+.rbc-month-view .rbc-row-bg, .rbc-month-view .rbc-row-content, .rbc-month-view .rbc-day-slot {
+  min-height: 120px !important;
+  height: auto !important;
+  background: #ffffff !important;
+  box-sizing: border-box !important;
+}
+.rbc-month-view .rbc-date-cell, .rbc-month-view .rbc-date {
+  color: #111 !important;
+  font-weight: 600 !important;
+  display: block !important;
+  padding: 6px !important;
+}
+.rbc-month-view .rbc-day-bg, .rbc-month-view .rbc-day-slot .rbc-day-bg {
+  background: transparent !important;
+  min-height: 120px !important;
+}
+.rbc-month-view .rbc-event, .rbc-month-view .rbc-event .rbc-event-content {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* fallback - ensure calendar container has height so grid renders */
+.calendar-wrap, .rbc-calendar {
+  min-height: 520px !important;
+  height: auto !important;
+}
+
+/* ensure toolbar stays visible & buttons clickable */
+.toolbar-bar, .rbc-toolbar { z-index: 50 !important; pointer-events: auto !important; }
+
