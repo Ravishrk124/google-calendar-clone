@@ -1,72 +1,107 @@
-# Google Calendar Clone
+# 🗓️ Google Calendar Clone
 
-## Live demo
-(Not deployed) — follow Setup to run locally or deploy to Vercel/Netlify.
+A fullstack high-fidelity clone of Google Calendar replicating its UI and logic — including month/week/day views, event creation/edit/delete, theme settings, and sidebar mini calendar.
+## 🚀 Live Demo
 
-## Overview
-This project is a high-fidelity fullstack clone of Google Calendar. It includes month/week/day views, event creation/edit/delete, a sidebar mini-calendar, settings menu (appearance), and a backend API for event persistence.
 
-## Tech stack
-- Frontend: React + Vite
-- Calendar view: react-big-calendar + moment
-- HTTP client: axios
-- Backend: Node.js + Express (lightweight API)
-- Database: SQLite (server/ uses SQLite for simple persistence)
-- Styling: plain CSS with a single app stylesheet
-- Deployment options: Vercel / Netlify (frontend), any Node host for backend
+Not deployed — run locally or deploy via Vercel/Netlify.
 
-## Architecture
-- Frontend (client/)
-  - App.jsx: main UI, header controls, calendar wrapper
-  - Sidebar.jsx: mini-month, create button, calendar lists
-  - EventModal.jsx: create/edit modal
-  - public/img: static images served at /img/...
-  - Uses react-big-calendar for rendering views; app manages `view` and `date` at top-level and passes them to the calendar.
-- Backend (server/)
-  - index.js: Express API routes for events
-  - db.sqlite: SQLite file (created on first run)
-  - seed.js: optional script to pre-seed events
 
-## Setup and run instructions
+## Documentation
+
+## 📘 Overview
+This project replicates Google Calendar’s interface and interactions with realistic Google-like design.
+
+### Highlights
+- React + Vite frontend
+- Node.js + Express + SQLite backend
+- Event creation, editing, deletion
+- Smooth modal transitions
+- Light/Dark mode
+- Settings, tasks, and calendar toggles
+## ⚙️ Installation
+
+
 
 ### Frontend
-1. Install dependencies
-   - `npm install`
-2. Add scripts in `package.json` if missing:
-   - `"dev": "vite"`
-   - `"build": "vite build"`
-   - `"preview": "vite preview"`
-3. Start dev server
-   - `npm run dev`
-4. Open the printed URL (default `http://localhost:5173`).
+1. Install dependencies:
+   npm install
 
-### Backend
-1. `cd server`
-2. `npm install`
-3. Start server:
-   - `npm run dev` or `node index.js`
-4. Default API base: `http://localhost:3001/api`
-5. Ensure frontend `VITE_API_URL` points to backend, e.g. `export VITE_API_URL=http://localhost:3001/api`
+2. Run dev server:
+   npm run dev
 
-### Full local run
-1. Start backend first (`cd server && npm run dev`)
-2. From project root start frontend (`npm run dev`)
+3. Open in browser:
+   http://localhost:5173
 
-## How images are used
-Place images in `public/img/` and reference them like:
-```jsx
-<img src="/img/addicon.PNG" alt="add" />
-
-
-Open browser at http://localhost:5173
-
-If missing scripts, add to package.json:
+If package.json is missing scripts:
 "scripts": {
   "dev": "vite",
   "build": "vite build",
   "preview": "vite preview"
 }
-Backend
+
+---
+
+### Backend
+1. Go to backend folder:
+   cd server
+
+2. Install dependencies:
+   npm install
+
+3. Run server:
+   npm run dev
+
+Backend runs at:
+http://localhost:3001
+
+---
+
+### Connect Frontend & Backend
+Set environment variable:
+export VITE_API_URL=http://localhost:3001/api
+## 🧩 Run Locally
+
+
+# Start backend
 cd server
-npm install
 npm run dev
+
+# Start frontend (in another terminal)
+npm run dev
+
+Then open http://localhost:5173
+
+## 🧠 Technology Stack
+
+| Layer | Technology | Why |
+|-------|-------------|-----|
+| Frontend | React + Vite | Fast, reactive setup |
+| Calendar | react-big-calendar | Realistic Google Calendar-like view |
+| Date Handling | Moment.js | Simplifies formatting and time handling |
+| Backend | Node.js + Express | Lightweight REST API |
+| Database | SQLite | Simple persistent local DB |
+| Styling | CSS3 | Google-style responsive layout |
+
+
+## 🌟 Features
+
+- Create, edit, delete events  
+- Month, week, day, and agenda views  
+- Modal with fade transitions  
+- Light/Dark mode toggle  
+- Sidebar mini calendar with quick navigation  
+- “Today” button navigation  
+- Settings dropdown and appearance controls  
+
+
+## 👨‍💻 Author
+
+**Ravish Kumar**  
+- GitHub: [Ravishrk124](https://github.com/Ravishrk124)  
+- LinkedIn: [linkedin.com/in/ravish-kumar-08ba0524b](https://linkedin.com/in/ravish-kumar-08ba0524b)
+
+
+## 📄 License
+
+This project is open-source under the MIT License.
